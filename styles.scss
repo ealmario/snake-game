@@ -25,3 +25,12 @@ body {
   grid-template-rows: repeat(21, 1fr);
   grid-template-columns: repeat(21, 1fr);
 }
+
+.snake {
+  background: $blacks;
+  border: .25vmin solid $body-color;
+}
+
+.food {
+  border: .25vmin solid $body-color;
+}

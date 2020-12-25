@@ -22,4 +22,13 @@ body {
   grid-template-columns: repeat(21, 1fr);
 }
 
+.snake {
+  background: #1f1f1f;
+  border: 0.25vmin solid #9dbef5;
+}
+
+.food {
+  border: 0.25vmin solid #9dbef5;
+}
+
 /*# sourceMappingURL=styles.css.map */
