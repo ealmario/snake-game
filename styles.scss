@@ -1,0 +1,27 @@
+// Variables
+$body-color: #9dbef5;
+$blacks: #1f1f1f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:$body-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-board {
+  border: 5px solid $blacks;
+  width: 90vmin;
+  height: 90vmin;
+  display: grid;
+  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(21, 1fr);
+}
