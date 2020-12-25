@@ -4,6 +4,7 @@ import { SNAKE_SPEED,
 } from './snake.js';
 
 // GAME LOOP
+const gameBoard = document.getElementById('gameBoard');
 let deltaTime = 0;
 
 function main (currentTime) {
@@ -13,7 +14,6 @@ function main (currentTime) {
   // # of seconds between each move
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
   deltaTime = currentTime;
-  console.log("render");
 
   update();
   draw();
@@ -26,5 +26,6 @@ function update() {
 }
 
 function draw() {
-  drawSnake();
+  gameBoard.innerHTML = '';
+  drawSnake(gameBoard);
 }
