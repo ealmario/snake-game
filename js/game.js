@@ -17,10 +17,13 @@ const instBtn = document.getElementById('instructions');
 const backBtn = document.getElementById('back');
 const yesBtn = document.getElementById('yes');
 const noBtn = document.getElementById('no');
+const switchBtn = document.getElementById('switch');
 const instModal = document.getElementById('instModal');
 const titleModal = document.getElementById('titleModal');
 const overlayModal = document.getElementById('overlayModal');
 const gameOverModal = document.getElementById('gameOverModal');
+const mobileContainer = document.getElementById('mobileContainer');
+const positionText = document.getElementById('position');
 
 // GAME LOOP
 let deltaTime = 0;
@@ -105,6 +108,15 @@ function restartGame() {
   window.location = "/snake-game/";
 }
 
+function toggleSwitch() {
+  mobileContainer.classList.toggle('row-reverse');
+  if (positionText.innerHTML === "left") {
+    positionText.innerHTML = "right"
+  } else {
+    positionText.innerHTML = "left"
+  }
+}
+
 export function increaseSpeed() {
   snakeSpeed += RATE_INCREASE;
   if (snakeSpeed >= 6) {
@@ -126,3 +138,4 @@ instBtn.addEventListener('click', instructions);
 backBtn.addEventListener('click', back);
 yesBtn.addEventListener('click', restartGame);
 noBtn.addEventListener('click', restartGame);
+switchBtn.addEventListener('click', toggleSwitch);

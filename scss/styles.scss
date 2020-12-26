@@ -191,6 +191,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
   width: 90vmin;
   margin: 0 auto;
 }
@@ -204,7 +205,6 @@ body {
   width: 50%;
 
   .row {
-    background: blue;
     display: flex;
     align-items: center;
     font-size: 3rem;
@@ -216,10 +216,13 @@ body {
     }
 
     &:nth-child(2) {
-      background: green;
       justify-content: space-between;
     }
   }
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
 }
 
 .snake {
