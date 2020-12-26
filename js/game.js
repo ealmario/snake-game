@@ -10,10 +10,12 @@ import { RATE_INCREASE } from './constants.js';
 
 // GAME LOOP
 const gameBoard = document.getElementById('gameBoard');
+const scoreContainer = document.getElementById('score');
 let deltaTime = 0;
 let gameOver = false;
 let snakeSpeed = 5; //how many times the snake moves per second
 let score = 0;
+scoreContainer.innerHTML = score;
 
 console.log(score);
 
@@ -62,5 +64,6 @@ export function increaseSpeed() {
 
 export function addScore() {
   score += Math.floor(snakeSpeed) + 10;
+  scoreContainer.innerHTML = score;
   console.log(score);
 }

@@ -6,11 +6,17 @@
 
 body {
   background: #9dbef5;
+  font-family: "Press Start 2p", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 .game-board {
@@ -22,6 +28,11 @@ body {
   grid-template-columns: repeat(21, 1fr);
 }
 
+.score-container {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .snake {
   background: #1f1f1f;
   border: 0.25vmin solid #9dbef5;
@@ -31,7 +42,7 @@ body {
   background: #9dbef5;
   border: 2px solid #1f1f1f;
   margin: 0.25vmin;
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(0.7);
 }
 
 /*# sourceMappingURL=styles.css.map */
