@@ -45,7 +45,7 @@ body {
     margin-bottom: 2rem;
   }
 
-  button {
+  .button {
     background: $blacks;
     border-radius: 4px;
     color: $body-color;
@@ -60,13 +60,20 @@ body {
     }
   }
 
+  .outline {
+    background: $body-color;
+    border: 3px solid $blacks;
+    color: $blacks;
+  }
+
   .play {
     margin-bottom: 0.5rem;
   }
 }
 
 .overlay-modal,
-.inst-modal {
+.inst-modal,
+.game-over-modal {
   background: $body-color;
   border: 5px solid $blacks;
   display: flex;
@@ -110,6 +117,22 @@ body {
     line-height: 1rem;
     margin: 1.25rem auto;
     text-align: center;
+  }
+}
+
+.game-over-modal {
+  .button {
+    width: 60%;
+  }
+
+  .reminder {
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .yes {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -163,7 +186,8 @@ body {
     }
   }
 
-  .overlay-modal {
+  .overlay-modal,
+  .game-over-modal {
     width: 50%;
 
     button {

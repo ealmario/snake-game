@@ -15,9 +15,12 @@ const highScoreContainer = document.getElementById('highScore');
 const playBtn = document.getElementById('play');
 const instBtn = document.getElementById('instructions');
 const backBtn = document.getElementById('back');
+const yesBtn = document.getElementById('yes');
+const noBtn = document.getElementById('no');
 const instModal = document.getElementById('instModal');
 const titleModal = document.getElementById('titleModal');
 const overlayModal = document.getElementById('overlayModal');
+const gameOverModal = document.getElementById('gameOverModal');
 
 // GAME LOOP
 let deltaTime = 0;
@@ -28,7 +31,6 @@ let highScore =  0;
 scoreContainer.innerHTML = score;
 highScoreContainer.innerHTML = score;
 
-console.log(score);
 
 function main (currentTime) {
   if (gameOver) {
@@ -37,31 +39,23 @@ function main (currentTime) {
       localStorage.setItem("highScore", highScore);
     }
 
-    if (confirm('You lost. Press ok to restart')) {
-      score = 0;
-      highScore = 0;
-      window.location = "/";
-    }
-    return 
-  }
-  
-  window.requestAnimationFrame(main);
-  const secondsSinceLastRender = (currentTime - deltaTime) / 1000;
-  
-  // # of seconds between each move
-  if (secondsSinceLastRender < 1 / snakeSpeed) return
-  deltaTime = currentTime;
+    gameOverModal.classList.remove('display-none');
+  } else {
+    window.requestAnimationFrame(main);
+    const secondsSinceLastRender = (currentTime - deltaTime) / 1000;
+    
+    // # of seconds between each move
+    if (secondsSinceLastRender < 1 / snakeSpeed) return
+    deltaTime = currentTime;
 
-  update();
-  draw();
+    update();
+    draw();
+  }
 }
 
 function startGame() {
-  if (localStorage.getItem('highScore') !== null) {
-    highScore = parseInt(localStorage.getItem('highScore'));
-    highScoreContainer.innerHTML = highScore;
-  }
-
+  console.log("This starts");
+  retrieveScore();
   overlayModal.style.display = 'none';
   window.requestAnimationFrame(main);
 }
@@ -100,6 +94,19 @@ function compareScore(score, highScore) {
   } return
 }
 
+function retrieveScore() {
+  if (localStorage.getItem('highScore') !== null) {
+    highScore = parseInt(localStorage.getItem('highScore'));
+    highScoreContainer.innerHTML = highScore;
+  }
+}
+
+function restartGame() {
+  score = 0;
+  highScore = 0;
+  window.location = "/";
+}
+
 export function increaseSpeed() {
   snakeSpeed += RATE_INCREASE;
   if (snakeSpeed >= 6) {
@@ -120,3 +127,5 @@ export function addScore() {
 playBtn.addEventListener('click', startGame);
 instBtn.addEventListener('click', instructions);
 backBtn.addEventListener('click', back);
+yesBtn.addEventListener('click', restartGame);
+noBtn.addEventListener('click', restartGame);

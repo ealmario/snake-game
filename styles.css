@@ -39,7 +39,7 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
-.overlay button {
+.overlay .button {
   background: #1f1f1f;
   border-radius: 4px;
   color: #9dbef5;
@@ -49,15 +49,21 @@ body {
   padding: 1rem 1.25rem;
   width: 100%;
 }
-.overlay button:focus {
+.overlay .button:focus {
   outline: none;
+}
+.overlay .outline {
+  background: #9dbef5;
+  border: 3px solid #1f1f1f;
+  color: #1f1f1f;
 }
 .overlay .play {
   margin-bottom: 0.5rem;
 }
 
 .overlay-modal,
-.inst-modal {
+.inst-modal,
+.game-over-modal {
   background: #9dbef5;
   border: 5px solid #1f1f1f;
   display: flex;
@@ -97,6 +103,18 @@ body {
   line-height: 1rem;
   margin: 1.25rem auto;
   text-align: center;
+}
+
+.game-over-modal .button {
+  width: 60%;
+}
+.game-over-modal .reminder {
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.game-over-modal .yes {
+  margin-bottom: 0.5rem;
 }
 
 .display-none {
@@ -147,10 +165,12 @@ body {
     margin-bottom: 0;
   }
 
-  .overlay-modal {
+  .overlay-modal,
+.game-over-modal {
     width: 50%;
   }
-  .overlay-modal button {
+  .overlay-modal button,
+.game-over-modal button {
     padding: 0.75rem 1rem;
     width: 60%;
   }

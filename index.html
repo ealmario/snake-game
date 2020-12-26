@@ -11,13 +11,22 @@
 </head>
 <body>
   <main class="container">
+
+    <div class="overlay display-none" id="gameOverModal">
+      <div class="game-over-modal">
+        <h2>Game Over!</h2>
+        <p class="reminder">Do you want to try again?</p>
+        <button id="yes" class="button yes">Yes!</button>
+        <button id="no" class="button outline">No, I'm good</button>
+      </div>
+    </div>
     
     <div class="overlay" id="overlayModal">
       <div class="overlay-modal" id="titleModal">
         <h1>Classic Snake</h1>
         <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
-        <button class="play" id="play">Play</button>
-        <button class="instructions" id="instructions">Instructions</button>
+        <button class="play button" id="play">Play</button>
+        <button class="instructions button" id="instructions">Instructions</button>
       </div>
 
       <div class="inst-modal display-none" id="instModal">
@@ -30,7 +39,7 @@
           <li>Down - Arrow Down</li>
         </ul>
         <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
-        <button id="back">Back</button>
+        <button id="back" class="button">Back</button>
       </div>
     </div>
 
