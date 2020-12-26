@@ -31,7 +31,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -97,6 +97,7 @@ body {
   font-size: 0.5rem;
   text-align: center;
   margin-bottom: 2rem;
+  line-height: 1rem;
 }
 
 .inst-modal {
@@ -113,16 +114,17 @@ body {
   }
 
   li {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     margin-bottom: 0.5rem;
   }
 
   .controls {
+    font-size: 0.8125rem;
     margin-bottom: 1rem;
   }
 
   .reminder {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     line-height: 1rem;
     margin: 1.25rem auto;
     text-align: center;
@@ -164,7 +166,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   width: 90vmin;
 
   .score-container {
@@ -189,6 +191,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 
     .score-container {
       margin-bottom: 0;
@@ -196,12 +199,27 @@ body {
   }
 
   .overlay-modal,
-  .game-over-modal {
+  .game-over-modal,
+  .inst-modal {
     width: 50%;
 
     button {
       padding: 0.75rem 1rem;
       width: 60%;
+    }
+  }
+
+  .inst-modal {
+    li {
+      font-size: 0.8125rem;
+    }
+
+    .controls {
+      font-size: 1rem;
+    }
+
+    .reminder {
+      font-size: 0.75rem;
     }
   }
 }
