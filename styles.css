@@ -28,7 +28,10 @@ body {
 }
 
 .food {
-  border: 0.25vmin solid #9dbef5;
+  background: #9dbef5;
+  border: 2px solid #1f1f1f;
+  margin: 0.25vmin;
+  transform: rotate(45deg);
 }
 
 /*# sourceMappingURL=styles.css.map */
