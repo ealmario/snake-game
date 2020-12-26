@@ -1,7 +1,7 @@
 import { EXPANSION_RATE } from './constants.js';
 import { onSnake, expandSnake } from './snake.js';
 import { randomGridPosition} from './grid.js';
-import { increaseSpeed } from './game.js';
+import { increaseSpeed, addScore } from './game.js';
 
 let food = getRandomFoodPosition();
 
@@ -9,6 +9,7 @@ let food = getRandomFoodPosition();
 export function update() {
   if (onSnake(food)) {
     expandSnake(EXPANSION_RATE);
+    addScore();
     increaseSpeed();
     food = getRandomFoodPosition();
   }

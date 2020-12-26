@@ -13,11 +13,15 @@ const gameBoard = document.getElementById('gameBoard');
 let deltaTime = 0;
 let gameOver = false;
 let snakeSpeed = 5; //how many times the snake moves per second
+let score = 0;
+
+console.log(score);
 
 function main (currentTime) {
   if (gameOver) {
     if (confirm('You lost. Press ok to restart')) {
-      window.location = '/'
+      window.location = '/';
+      score = 0;
     }
     return 
   }
@@ -54,4 +58,9 @@ function checkDeath() {
 
 export function increaseSpeed() {
   snakeSpeed += RATE_INCREASE;
+}
+
+export function addScore() {
+  score += Math.floor(snakeSpeed) + 10;
+  console.log(score);
 }
