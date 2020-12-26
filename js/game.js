@@ -6,12 +6,13 @@ import {
 } from './snake.js';
 import { update as updateFood, draw as drawFood } from './food.js';
 import { outsideGrid } from './grid.js';
-import { SNAKE_SPEED } from './constants.js';
+import { RATE_INCREASE } from './constants.js';
 
 // GAME LOOP
 const gameBoard = document.getElementById('gameBoard');
 let deltaTime = 0;
 let gameOver = false;
+let snakeSpeed = 5; //how many times the snake moves per second
 
 function main (currentTime) {
   if (gameOver) {
@@ -25,11 +26,12 @@ function main (currentTime) {
   const secondsSinceLastRender = (currentTime - deltaTime) / 1000;
   
   // # of seconds between each move
-  if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
+  if (secondsSinceLastRender < 1 / snakeSpeed) return
   deltaTime = currentTime;
 
   update();
   draw();
+  console.log(snakeSpeed);
 }
 
 window.requestAnimationFrame(main);
@@ -48,4 +50,8 @@ function draw() {
 
 function checkDeath() {
   gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
+}
+
+export function increaseSpeed() {
+  snakeSpeed += RATE_INCREASE;
 }
