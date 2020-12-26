@@ -102,7 +102,7 @@ function retrieveScore() {
 function restartGame() {
   score = 0;
   highScore = 0;
-  window.location = "/";
+  window.location = "/snake-game/";
 }
 
 export function increaseSpeed() {
