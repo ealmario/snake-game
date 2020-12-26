@@ -1,0 +1,293 @@
+// Variables
+$body-color: #9dbef5;
+$blacks: #1f1f1f;
+$overlay-bg: rgba(31,31,31, 0.4);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background:$body-color;
+  color: $blacks;
+  font-family: 'Press Start 2p', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  margin: 1rem auto;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.overlay {
+  background: $overlay-bg;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  h1, h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .play {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.button {
+  background: $blacks;
+  border-radius: 4px;
+  color: $body-color;
+  border: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 1rem 1.25rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.outline {
+  background: $body-color;
+  border: 3px solid $blacks;
+  color: $blacks;
+}
+
+.switch {
+  width: 40%;
+  line-height: 1.5rem;
+  padding: 0.5rem;
+}
+
+.overlay-modal,
+.inst-modal,
+.game-over-modal {
+  background: $body-color;
+  border: 5px solid $blacks;
+  box-shadow: 0 4px 8px $overlay-bg;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 95%;
+}
+
+.overlay-modal .reminder {
+  font-size: 0.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1rem;
+}
+
+.inst-modal {
+  align-items: flex-start;
+
+  h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .controls {
+    font-size: 0.8125rem;
+    margin-bottom: 1rem;
+  }
+
+  .reminder {
+    font-size: 0.5rem;
+    line-height: 1rem;
+    margin: 1.25rem auto;
+    text-align: center;
+  }
+}
+
+.game-over-modal {
+  .button {
+    width: 60%;
+  }
+
+  .reminder {
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .yes {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.game-board {
+  border: 5px solid $blacks;
+  width: 90vmin;
+  height: 90vmin;
+  display: grid;
+  grid-template-rows: repeat(21, 1fr);
+  grid-template-columns: repeat(21, 1fr);
+}
+
+.scores-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  width: 90vmin;
+
+  .score-container {
+    margin-bottom: 1rem;
+  }
+}
+
+.mobile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 90vmin;
+  margin: 0 auto;
+}
+
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 1rem;
+  width: 50%;
+
+  .row {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    width: 100%;
+    
+    &:first-child,
+    &:last-child {
+      justify-content: center;
+    }
+
+    &:nth-child(2) {
+      justify-content: space-between;
+    }
+  }
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.snake {
+  background: $blacks;
+  border: .25vmin solid $body-color;
+}
+
+.food {
+  background: $body-color;
+  border: 2px solid $blacks;
+  margin: .25vmin;
+  transform: rotate(45deg) scale(0.7);
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scores-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .score-container {
+      margin-bottom: 0;
+    }
+  }
+
+  .overlay-modal,
+  .game-over-modal,
+  .inst-modal {
+    width: 50%;
+
+    button {
+      padding: 0.75rem 1rem;
+      width: 60%;
+    }
+  }
+
+  .inst-modal {
+    li {
+      font-size: 0.8125rem;
+    }
+
+    .controls {
+      font-size: 1rem;
+    }
+
+    .reminder {
+      font-size: 0.75rem;
+    }
+  }
+
+  .mobile-controls {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-container {
+    display: none;
+  }
+}

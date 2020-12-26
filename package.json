@@ -1,0 +1,30 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "Classic snake game built with vanilla Javascript",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ealmario/snake-game.git"
+  },
+  "keywords": [
+    "vanilla",
+    "javascript",
+    "game",
+    "html5",
+    "snake",
+    "game"
+  ],
+  "author": "Eli Almario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ealmario/snake-game/issues"
+  },
+  "homepage": "https://ealmario.github.io/snake-game/",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
