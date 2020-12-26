@@ -12,6 +12,10 @@ import { RATE_INCREASE } from './constants.js';
 const gameBoard = document.getElementById('gameBoard');
 const scoreContainer = document.getElementById('score');
 const playBtn = document.getElementById('play');
+const instBtn = document.getElementById('instructions');
+const backBtn = document.getElementById('back');
+const instModal = document.getElementById('instModal');
+const titleModal = document.getElementById('titleModal');
 const overlayModal = document.getElementById('overlayModal');
 let deltaTime = 0;
 let gameOver = false;
@@ -43,9 +47,18 @@ function main (currentTime) {
 }
 
 function startGame() {
-  console.log("Play");
   overlayModal.style.display = 'none';
   window.requestAnimationFrame(main);
+}
+
+function instructions() {
+  instModal.classList.remove('display-none');
+  titleModal.classList.add('display-none');
+}
+
+function back() {
+  instModal.classList.add('display-none');
+  titleModal.classList.remove('display-none');
 }
 
 function update() {
@@ -79,3 +92,5 @@ export function addScore() {
 }
 
 playBtn.addEventListener('click', startGame);
+instBtn.addEventListener('click', instructions);
+backBtn.addEventListener('click', back);

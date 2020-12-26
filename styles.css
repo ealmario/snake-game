@@ -35,23 +35,11 @@ body {
   height: 100%;
   z-index: 2;
 }
-
-.overlay-modal {
-  background: #9dbef5;
-  border: 5px solid #1f1f1f;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  width: 95%;
-  height: 30%;
-}
-.overlay-modal h1 {
+.overlay h1, .overlay h2 {
   font-size: 1.25rem;
   margin-bottom: 3rem;
 }
-.overlay-modal button {
+.overlay button {
   background: #1f1f1f;
   border-radius: 4px;
   color: #9dbef5;
@@ -61,8 +49,52 @@ body {
   padding: 1rem 1.25rem;
   width: 100%;
 }
-.overlay-modal button:focus {
+.overlay button:focus {
   outline: none;
+}
+.overlay .play {
+  margin-bottom: 0.5rem;
+}
+
+.overlay-modal,
+.inst-modal {
+  background: #9dbef5;
+  border: 5px solid #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 95%;
+}
+
+.inst-modal {
+  align-items: flex-start;
+}
+.inst-modal h2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+.inst-modal ul {
+  list-style: none;
+}
+.inst-modal li {
+  font-size: 0.8125rem;
+  margin-bottom: 0.5rem;
+}
+.inst-modal .controls {
+  margin-bottom: 1rem;
+}
+.inst-modal .reminder {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: 1.25rem auto;
+  text-align: center;
+}
+
+.display-none {
+  display: none;
 }
 
 .game-board {
@@ -114,7 +146,7 @@ body {
   }
   .overlay-modal button {
     padding: 0.75rem 1rem;
-    width: 50%;
+    width: 60%;
   }
 }
 

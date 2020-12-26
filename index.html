@@ -13,9 +13,23 @@
   <main class="container">
     
     <div class="overlay" id="overlayModal">
-      <div class="overlay-modal">
+      <div class="overlay-modal" id="titleModal">
         <h1>Classic Snake</h1>
         <button class="play" id="play">Play</button>
+        <button class="instructions" id="instructions">Instructions</button>
+      </div>
+
+      <div class="inst-modal display-none" id="instModal">
+        <h2>Instructions</h2>
+        <p class="controls">Controls:</p>
+        <ul>
+          <li>Up - Arrow Up</li>
+          <li>Left - Arrow Left</li>
+          <li>Right - Arrow Right</li>
+          <li>Down - Arrow Down</li>
+        </ul>
+        <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
+        <button id="back">Back</button>
       </div>
     </div>
 
