@@ -42,7 +42,7 @@ body {
 .overlay {
   background: $overlay-bg;
   position: absolute;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
