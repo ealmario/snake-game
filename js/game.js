@@ -17,6 +17,7 @@ let snakeSpeed = 5; //how many times the snake moves per second
 let score = 0;
 scoreContainer.innerHTML = score;
 
+console.log(snakeSpeed)
 console.log(score);
 
 function main (currentTime) {
@@ -37,7 +38,6 @@ function main (currentTime) {
 
   update();
   draw();
-  console.log(snakeSpeed);
 }
 
 window.requestAnimationFrame(main);
@@ -60,6 +60,10 @@ function checkDeath() {
 
 export function increaseSpeed() {
   snakeSpeed += RATE_INCREASE;
+  if (snakeSpeed >= 6) {
+    snakeSpeed += RATE_INCREASE * 4;
+  }
+  console.log(snakeSpeed);
 }
 
 export function addScore() {
