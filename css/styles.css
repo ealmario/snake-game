@@ -198,6 +198,9 @@ body {
 .mobile-controls .row:nth-child(2) {
   justify-content: space-between;
 }
+.mobile-controls .row i.fas {
+  padding: 1rem;
+}
 
 .row-reverse {
   flex-direction: row-reverse;
