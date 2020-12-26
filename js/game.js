@@ -11,6 +11,8 @@ import { RATE_INCREASE } from './constants.js';
 // GAME LOOP
 const gameBoard = document.getElementById('gameBoard');
 const scoreContainer = document.getElementById('score');
+const playBtn = document.getElementById('play');
+const overlayModal = document.getElementById('overlayModal');
 let deltaTime = 0;
 let gameOver = false;
 let snakeSpeed = 5; //how many times the snake moves per second
@@ -40,7 +42,11 @@ function main (currentTime) {
   draw();
 }
 
-window.requestAnimationFrame(main);
+function startGame() {
+  console.log("Play");
+  overlayModal.style.display = 'none';
+  window.requestAnimationFrame(main);
+}
 
 function update() {
   updateSnake();
@@ -71,3 +77,5 @@ export function addScore() {
   scoreContainer.innerHTML = score;
   console.log(score);
 }
+
+playBtn.addEventListener('click', startGame);

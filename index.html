@@ -11,8 +11,19 @@
 </head>
 <body>
   <main class="container">
-    <p class="score-container">Score: <span id="score"></span></p>
-    <div id="gameBoard" class="game-board"></div>
+    
+    <div class="overlay" id="overlayModal">
+      <div class="overlay-modal">
+        <h1>Classic Snake</h1>
+        <button class="play" id="play">Play</button>
+      </div>
+    </div>
+
+    <div class="scores-container">
+      <p class="score-container">Score:<span id="score"></span></p>
+      <p class="high-score-container">Hi-Score:<span id="highScore"></span>
+    </div>
+      <div id="gameBoard" class="game-board"></div>
   </main>
 </body>
 </html>
