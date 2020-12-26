@@ -9,6 +9,11 @@ $overlay-bg: rgba(31,31,31, 0.4);
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   background:$body-color;
   color: $blacks;
@@ -16,8 +21,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .footer {
@@ -33,6 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: relative;
@@ -40,7 +47,7 @@ body {
 
 .overlay {
   background: $overlay-bg;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,30 +60,36 @@ body {
     margin-bottom: 2rem;
   }
 
-  .button {
-    background: $blacks;
-    border-radius: 4px;
-    color: $body-color;
-    border: none;
-    cursor: pointer;
-    font-family: 'Press Start 2P', sans-serif;
-    padding: 1rem 1.25rem;
-    width: 100%;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .outline {
-    background: $body-color;
-    border: 3px solid $blacks;
-    color: $blacks;
-  }
-
   .play {
     margin-bottom: 0.5rem;
   }
+}
+
+.button {
+  background: $blacks;
+  border-radius: 4px;
+  color: $body-color;
+  border: none;
+  cursor: pointer;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 1rem 1.25rem;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.outline {
+  background: $body-color;
+  border: 3px solid $blacks;
+  color: $blacks;
+}
+
+.switch {
+  width: 40%;
+  line-height: 1.5rem;
+  padding: 0.5rem;
 }
 
 .overlay-modal,
@@ -174,6 +187,41 @@ body {
   }
 }
 
+.mobile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90vmin;
+  margin: 0 auto;
+}
+
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 1rem;
+  width: 50%;
+
+  .row {
+    background: blue;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    width: 100%;
+    
+    &:first-child,
+    &:last-child {
+      justify-content: center;
+    }
+
+    &:nth-child(2) {
+      background: green;
+      justify-content: space-between;
+    }
+  }
+}
+
 .snake {
   background: $blacks;
   border: .25vmin solid $body-color;
@@ -184,6 +232,13 @@ body {
   border: 2px solid $blacks;
   margin: .25vmin;
   transform: rotate(45deg) scale(0.7);
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -221,5 +276,15 @@ body {
     .reminder {
       font-size: 0.75rem;
     }
+  }
+
+  .mobile-controls {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mobile-container {
+    display: none;
   }
 }

@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   background: #9dbef5;
   color: #1f1f1f;
@@ -11,8 +16,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .footer {
@@ -28,6 +34,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: relative;
@@ -35,7 +42,7 @@ body {
 
 .overlay {
   background: rgba(31, 31, 31, 0.4);
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +54,11 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
 }
-.overlay .button {
+.overlay .play {
+  margin-bottom: 0.5rem;
+}
+
+.button {
   background: #1f1f1f;
   border-radius: 4px;
   color: #9dbef5;
@@ -57,16 +68,20 @@ body {
   padding: 1rem 1.25rem;
   width: 100%;
 }
-.overlay .button:focus {
+.button:focus {
   outline: none;
 }
-.overlay .outline {
+
+.outline {
   background: #9dbef5;
   border: 3px solid #1f1f1f;
   color: #1f1f1f;
 }
-.overlay .play {
-  margin-bottom: 0.5rem;
+
+.switch {
+  width: 40%;
+  line-height: 1.5rem;
+  padding: 0.5rem;
 }
 
 .overlay-modal,
@@ -154,6 +169,37 @@ body {
   margin-bottom: 1rem;
 }
 
+.mobile-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90vmin;
+  margin: 0 auto;
+}
+
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 1rem;
+  width: 50%;
+}
+.mobile-controls .row {
+  background: blue;
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  width: 100%;
+}
+.mobile-controls .row:first-child, .mobile-controls .row:last-child {
+  justify-content: center;
+}
+.mobile-controls .row:nth-child(2) {
+  background: green;
+  justify-content: space-between;
+}
+
 .snake {
   background: #1f1f1f;
   border: 0.25vmin solid #9dbef5;
@@ -166,6 +212,12 @@ body {
   transform: rotate(45deg) scale(0.7);
 }
 
+@media screen and (min-width: 375px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .scores-container {
     flex-direction: row;
@@ -197,6 +249,15 @@ body {
   }
   .inst-modal .reminder {
     font-size: 0.75rem;
+  }
+
+  .mobile-controls {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mobile-container {
+    display: none;
   }
 }
 
