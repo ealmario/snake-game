@@ -54,7 +54,6 @@ function main (currentTime) {
 }
 
 function startGame() {
-  console.log("This starts");
   retrieveScore();
   overlayModal.style.display = 'none';
   window.requestAnimationFrame(main);
@@ -89,7 +88,6 @@ function checkDeath() {
 function compareScore(score, highScore) {
   if (score > highScore) {
     highScore = score;
-    console.log('highscore in compareScore is', highScore)
     highScoreContainer.innerHTML = highScore;
   } return
 }
@@ -112,7 +110,6 @@ export function increaseSpeed() {
   if (snakeSpeed >= 6) {
     snakeSpeed += RATE_INCREASE * 4;
   }
-  console.log(snakeSpeed);
 }
 
 export function addScore() {
