@@ -203,6 +203,7 @@ body {
   align-items: flex-end;
   margin-top: 1rem;
   width: 50%;
+  height: auto;
 
   .row {
     display: flex;
@@ -216,8 +217,29 @@ body {
     }
 
     &:nth-child(2) {
-      justify-content: space-between;
+      justify-content: space-around;
+      margin: 0.5rem 0;
     }
+  }
+}
+
+.arrow-left,
+.arrow-right,
+.arrow-up,
+.arrow-down {
+  background: none;
+  border: none;
+  color: $blacks;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+
+  i {
+    font-size: 2.75rem;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -241,6 +263,18 @@ body {
   .container {
     justify-content: flex-start;
     padding-top: 2rem;
+  }
+
+  .arrow-left,
+  .arrow-right,
+  .arrow-up,
+  .arrow-down {
+    width: 3rem;
+    height: 3rem;
+
+    i {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -283,6 +317,18 @@ body {
 
   .mobile-controls {
     width: 30%;
+  }
+
+  .arrow-left,
+  .arrow-right,
+  .arrow-up,
+  .arrow-down {
+    width: 3.25rem;
+    height: 3.25rem;
+
+    i {
+      font-size: 3.25rem;
+    }
   }
 }
 
