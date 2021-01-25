@@ -94,7 +94,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   width: 95%;
 }
 
@@ -106,6 +106,8 @@ body {
 }
 
 .inst-modal {
+  display: flex;
+  justify-content: center;
   align-items: flex-start;
 }
 .inst-modal h2 {
@@ -127,8 +129,15 @@ body {
 .inst-modal .reminder {
   font-size: 0.5rem;
   line-height: 1rem;
+  letter-spacing: 0.4px;
   margin: 1.25rem auto;
   text-align: center;
+}
+.inst-modal .btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .game-over-modal .button {
@@ -185,6 +194,7 @@ body {
   align-items: flex-end;
   margin-top: 1rem;
   width: 50%;
+  height: auto;
 }
 .mobile-controls .row {
   display: flex;
@@ -196,7 +206,32 @@ body {
   justify-content: center;
 }
 .mobile-controls .row:nth-child(2) {
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 0.5rem 0;
+}
+
+.arrow-left,
+.arrow-right,
+.arrow-up,
+.arrow-down {
+  background: none;
+  border: none;
+  color: #1f1f1f;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.arrow-left i,
+.arrow-right i,
+.arrow-up i,
+.arrow-down i {
+  font-size: 2.75rem;
+}
+.arrow-left:focus,
+.arrow-right:focus,
+.arrow-up:focus,
+.arrow-down:focus {
+  outline: none;
 }
 
 .row-reverse {
@@ -215,10 +250,28 @@ body {
   transform: rotate(45deg) scale(0.7);
 }
 
+.modal.fixed {
+  font-family: "Montserrat", sans-serif;
+}
+
 @media screen and (min-width: 375px) {
   .container {
     justify-content: flex-start;
     padding-top: 2rem;
+  }
+
+  .arrow-left,
+.arrow-right,
+.arrow-up,
+.arrow-down {
+    width: 3rem;
+    height: 3rem;
+  }
+  .arrow-left i,
+.arrow-right i,
+.arrow-up i,
+.arrow-down i {
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -251,14 +304,35 @@ body {
     font-size: 1rem;
   }
   .inst-modal .reminder {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
+    line-height: 1.25rem;
   }
 
   .mobile-controls {
     width: 30%;
   }
+
+  .arrow-left,
+.arrow-right,
+.arrow-up,
+.arrow-down {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .arrow-left i,
+.arrow-right i,
+.arrow-up i,
+.arrow-down i {
+    font-size: 3.25rem;
+  }
 }
 @media screen and (min-width: 1024px) {
+  .overlay-modal,
+.game-over-modal,
+.inst-modal {
+    width: 32rem;
+  }
+
   .mobile-container {
     display: none;
   }

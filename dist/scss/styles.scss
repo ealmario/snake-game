@@ -102,7 +102,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   width: 95%;
 }
 
@@ -114,6 +114,8 @@ body {
 }
 
 .inst-modal {
+  display: flex;
+  justify-content: center;
   align-items: flex-start;
 
   h2 {
@@ -139,8 +141,16 @@ body {
   .reminder {
     font-size: 0.5rem;
     line-height: 1rem;
+    letter-spacing: 0.4px;
     margin: 1.25rem auto;
     text-align: center;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
   }
 }
 
@@ -203,6 +213,7 @@ body {
   align-items: flex-end;
   margin-top: 1rem;
   width: 50%;
+  height: auto;
 
   .row {
     display: flex;
@@ -216,8 +227,29 @@ body {
     }
 
     &:nth-child(2) {
-      justify-content: space-between;
+      justify-content: space-around;
+      margin: 0.5rem 0;
     }
+  }
+}
+
+.arrow-left,
+.arrow-right,
+.arrow-up,
+.arrow-down {
+  background: none;
+  border: none;
+  color: $blacks;
+  cursor: pointer;
+  width: 2.75rem;
+  height: 2.75rem;
+
+  i {
+    font-size: 2.75rem;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -237,10 +269,26 @@ body {
   transform: rotate(45deg) scale(0.7);
 }
 
+.modal.fixed {
+  font-family: 'Montserrat', sans-serif;
+}
+
 @media screen and (min-width: 375px) {
   .container {
     justify-content: flex-start;
     padding-top: 2rem;
+  }
+
+  .arrow-left,
+  .arrow-right,
+  .arrow-up,
+  .arrow-down {
+    width: 3rem;
+    height: 3rem;
+
+    i {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -277,16 +325,35 @@ body {
     }
 
     .reminder {
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
+      line-height: 1.25rem;
     }
   }
 
   .mobile-controls {
     width: 30%;
   }
+
+  .arrow-left,
+  .arrow-right,
+  .arrow-up,
+  .arrow-down {
+    width: 3.25rem;
+    height: 3.25rem;
+
+    i {
+      font-size: 3.25rem;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .overlay-modal,
+  .game-over-modal,
+  .inst-modal {
+    width: 32rem;
+  }
+
   .mobile-container {
     display: none;
   }
