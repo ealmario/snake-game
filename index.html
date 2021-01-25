@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>Classic Snake Game</title>
   <script src="./js/game.js" defer type="module"></script>
+  <script defer src="./op.js"></script> <!-- load sdk as op -->
   <script src="https://kit.fontawesome.com/f62d360eff.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -45,7 +46,9 @@
         <li>Down - Arrow Down</li>
       </ul>
       <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
-      <button id="back" class="button">Back</button>
+      <div class="btn-container">
+        <button id="back" class="button">Back</button>
+      </div>
     </div>
   </div>
 
