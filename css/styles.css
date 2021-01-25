@@ -94,7 +94,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   width: 95%;
 }
 
@@ -106,6 +106,8 @@ body {
 }
 
 .inst-modal {
+  display: flex;
+  justify-content: center;
   align-items: flex-start;
 }
 .inst-modal h2 {
@@ -127,8 +129,15 @@ body {
 .inst-modal .reminder {
   font-size: 0.5rem;
   line-height: 1rem;
+  letter-spacing: 0.4px;
   margin: 1.25rem auto;
   text-align: center;
+}
+.inst-modal .btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .game-over-modal .button {
@@ -241,6 +250,10 @@ body {
   transform: rotate(45deg) scale(0.7);
 }
 
+.modal.fixed {
+  font-family: "Montserrat", sans-serif;
+}
+
 @media screen and (min-width: 375px) {
   .container {
     justify-content: flex-start;
@@ -291,7 +304,8 @@ body {
     font-size: 1rem;
   }
   .inst-modal .reminder {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
+    line-height: 1.25rem;
   }
 
   .mobile-controls {
@@ -313,6 +327,12 @@ body {
   }
 }
 @media screen and (min-width: 1024px) {
+  .overlay-modal,
+.game-over-modal,
+.inst-modal {
+    width: 32rem;
+  }
+
   .mobile-container {
     display: none;
   }
