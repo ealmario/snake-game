@@ -7,6 +7,7 @@ import {
 import { update as updateFood, draw as drawFood } from './food.js';
 import { outsideGrid } from './grid.js';
 import { RATE_INCREASE, ADD_SCORE } from './constants.js';
+import './op.js';
 
 // DOM
 const gameBoard = document.getElementById('gameBoard');
@@ -14,6 +15,7 @@ const scoreContainer = document.getElementById('score');
 const highScoreContainer = document.getElementById('highScore');
 const playBtn = document.getElementById('play');
 const instBtn = document.getElementById('instructions');
+const loginBtn = document.getElementById('login');
 const backBtn = document.getElementById('back');
 const yesBtn = document.getElementById('yes');
 const noBtn = document.getElementById('no');
@@ -106,6 +108,7 @@ function restartGame() {
   score = 0;
   highScore = 0;
   window.location = "/snake-game/";
+  // window.location = "/";
 }
 
 function toggleSwitch() {
@@ -133,9 +136,29 @@ export function addScore() {
   compareScore(score, highScore);
 }
 
+async function submitScore() {
+  const tournament_id = op.getTournamentId();
+
+  const options = {
+    tournament_id,
+    score
+  }
+
+  if (tournament_id !== null) {
+    const post = await op.postScore(options);
+
+    if (post.success) {
+      alert("Successfully submitted score " + score);
+      window.location = "/snake-game/";
+    }
+  } 
+
+  window.location = "/snake-game/";
+}
+
 playBtn.addEventListener('click', startGame);
 instBtn.addEventListener('click', instructions);
 backBtn.addEventListener('click', back);
 yesBtn.addEventListener('click', restartGame);
-noBtn.addEventListener('click', restartGame);
+noBtn.addEventListener('click', submitScore);
 switchBtn.addEventListener('click', toggleSwitch);
