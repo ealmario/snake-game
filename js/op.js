@@ -3821,6 +3821,7 @@
 
     const onOpArcade = writable(false);
     const isProd = writable(false);
+    const isTournament = writable(false);
 
     const tourneyStore = getTourneyStore();
     const authStore = getAuthStore();
@@ -4173,12 +4174,12 @@
 
     function add_css$1() {
     	var style = element("style");
-    	style.id = "svelte-x2vv6l-style";
-    	style.textContent = ".logged-in.svelte-x2vv6l{background-color:#00c3ff}.on-op-arcade.svelte-x2vv6l{visibility:visible;width:3.5rem;height:3.5rem}";
+    	style.id = "svelte-hcophq-style";
+    	style.textContent = ".logged-in.svelte-hcophq{background-color:#00c3ff}.on-op-arcade.svelte-hcophq{width:3.5rem;height:3.5rem}";
     	append(document.head, style);
     }
 
-    // (43:0) {#if visible}
+    // (52:0) {#if visible}
     function create_if_block$1(ctx) {
     	let div3;
     	let div0;
@@ -4214,7 +4215,7 @@
     	let mounted;
     	let dispose;
     	loginprompt = new LoginPrompt({});
-    	let if_block = /*$opSdk*/ ctx[4].state == SDK_STATES.NOT_CONNECTED && create_if_block_1$1(ctx);
+    	let if_block = /*$opSdk*/ ctx[5].state == SDK_STATES.NOT_CONNECTED && create_if_block_1$1(ctx);
 
     	return {
     		c() {
@@ -4263,7 +4264,7 @@
     			span16.innerHTML = `<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
     			t18 = space();
     			span17 = element("span");
-    			t19 = text(/*$url*/ ctx[3]);
+    			t19 = text(/*$url*/ ctx[4]);
     			t20 = space();
     			div1 = element("div");
     			if (if_block) if_block.c();
@@ -4316,14 +4317,14 @@
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen(div0, "click", /*click_handler_1*/ ctx[8]);
+    				dispose = listen(div0, "click", /*click_handler*/ ctx[7]);
     				mounted = true;
     			}
     		},
     		p(ctx, dirty) {
-    			if (!current || dirty & /*$url*/ 8) set_data(t19, /*$url*/ ctx[3]);
+    			if (!current || dirty & /*$url*/ 16) set_data(t19, /*$url*/ ctx[4]);
 
-    			if (/*$opSdk*/ ctx[4].state == SDK_STATES.NOT_CONNECTED) {
+    			if (/*$opSdk*/ ctx[5].state == SDK_STATES.NOT_CONNECTED) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -4373,7 +4374,7 @@
     	};
     }
 
-    // (178:8) {#if $opSdk.state == SDK_STATES.NOT_CONNECTED}
+    // (187:8) {#if $opSdk.state == SDK_STATES.NOT_CONNECTED}
     function create_if_block_1$1(ctx) {
     	let input;
     	let t;
@@ -4393,13 +4394,13 @@
     		},
     		m(target, anchor) {
     			insert(target, input, anchor);
-    			set_input_value(input, /*$apiKey*/ ctx[5]);
+    			set_input_value(input, /*$apiKey*/ ctx[6]);
     			insert(target, t, anchor);
     			insert(target, button, anchor);
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*input_input_handler*/ ctx[9]),
+    					listen(input, "input", /*input_input_handler*/ ctx[8]),
     					listen(button, "click", opSdk.connect)
     				];
 
@@ -4407,8 +4408,8 @@
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty & /*$apiKey*/ 32 && input.value !== /*$apiKey*/ ctx[5]) {
-    				set_input_value(input, /*$apiKey*/ ctx[5]);
+    			if (dirty & /*$apiKey*/ 64 && input.value !== /*$apiKey*/ ctx[6]) {
+    				set_input_value(input, /*$apiKey*/ ctx[6]);
     			}
     		},
     		d(detaching) {
@@ -4430,8 +4431,6 @@
     	let t1;
     	let if_block_anchor;
     	let current;
-    	let mounted;
-    	let dispose;
     	let if_block = /*visible*/ ctx[0] && create_if_block$1(ctx);
 
     	return {
@@ -4443,13 +4442,15 @@
     			t1 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			attr(div, "class", "invisible m-3 fixed -top-0.5 -left-1 inline-flex items-center justify-center bg-yellow-500 w-12 h-12 rounded-full transition-transform svelte-x2vv6l");
+    			attr(div, "class", "m-3 fixed -top-0.5 -left-1 inline-flex items-center justify-center bg-yellow-500 w-12 h-12 rounded-full transition-transform svelte-hcophq");
     			toggle_class(div, "on-op-arcade", /*$onOpArcade*/ ctx[1]);
+    			toggle_class(div, "invisible", !/*$isTournament*/ ctx[2]);
     			attr(img$1, "class", "w-10 h-10 fill-current");
     			attr(img$1, "alt", "g3js logo");
     			if (img$1.src !== (img_src_value = img)) attr(img$1, "src", img_src_value);
-    			attr(button, "class", "m-3 fixed top-0 left-0 inline-flex items-center justify-center w-12 h-12 mr-2 transition-colors duration-300 bg-indigo-700 rounded-full hover:bg-indigo-900 svelte-x2vv6l");
-    			toggle_class(button, "logged-in", /*$loginState*/ ctx[2] == CONSTANTS.LOGIN_STATES.LOGGED_IN);
+    			attr(button, "class", "m-3 fixed top-0 left-0 inline-flex items-center justify-center w-12 h-12 mr-2 transition-colors duration-300 bg-indigo-700 rounded-full hover:bg-indigo-900 svelte-hcophq");
+    			toggle_class(button, "logged-in", /*$loginState*/ ctx[3] == CONSTANTS.LOGIN_STATES.LOGGED_IN);
+    			toggle_class(button, "invisible", !/*$isTournament*/ ctx[2]);
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -4460,23 +4461,22 @@
     			if (if_block) if_block.m(target, anchor);
     			insert(target, if_block_anchor, anchor);
     			current = true;
-
-    			if (!mounted) {
-    				dispose = [
-    					listen(window, "keydown", /*handleKeydown*/ ctx[6]),
-    					listen(button, "click", /*click_handler*/ ctx[7])
-    				];
-
-    				mounted = true;
-    			}
     		},
     		p(ctx, [dirty]) {
     			if (dirty & /*$onOpArcade*/ 2) {
     				toggle_class(div, "on-op-arcade", /*$onOpArcade*/ ctx[1]);
     			}
 
-    			if (dirty & /*$loginState, CONSTANTS*/ 4) {
-    				toggle_class(button, "logged-in", /*$loginState*/ ctx[2] == CONSTANTS.LOGIN_STATES.LOGGED_IN);
+    			if (dirty & /*$isTournament*/ 4) {
+    				toggle_class(div, "invisible", !/*$isTournament*/ ctx[2]);
+    			}
+
+    			if (dirty & /*$loginState, CONSTANTS*/ 8) {
+    				toggle_class(button, "logged-in", /*$loginState*/ ctx[3] == CONSTANTS.LOGIN_STATES.LOGGED_IN);
+    			}
+
+    			if (dirty & /*$isTournament*/ 4) {
+    				toggle_class(button, "invisible", !/*$isTournament*/ ctx[2]);
     			}
 
     			if (/*visible*/ ctx[0]) {
@@ -4518,32 +4518,25 @@
     			if (detaching) detach(t1);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach(if_block_anchor);
-    			mounted = false;
-    			run_all(dispose);
     		}
     	};
     }
 
     function instance$1($$self, $$props, $$invalidate) {
     	let $onOpArcade;
+    	let $isTournament;
     	let $loginState;
     	let $url;
     	let $opSdk;
     	let $apiKey;
     	component_subscribe($$self, onOpArcade, $$value => $$invalidate(1, $onOpArcade = $$value));
-    	component_subscribe($$self, loginState, $$value => $$invalidate(2, $loginState = $$value));
-    	component_subscribe($$self, url, $$value => $$invalidate(3, $url = $$value));
-    	component_subscribe($$self, opSdk, $$value => $$invalidate(4, $opSdk = $$value));
-    	component_subscribe($$self, apiKey, $$value => $$invalidate(5, $apiKey = $$value));
+    	component_subscribe($$self, isTournament, $$value => $$invalidate(2, $isTournament = $$value));
+    	component_subscribe($$self, loginState, $$value => $$invalidate(3, $loginState = $$value));
+    	component_subscribe($$self, url, $$value => $$invalidate(4, $url = $$value));
+    	component_subscribe($$self, opSdk, $$value => $$invalidate(5, $opSdk = $$value));
+    	component_subscribe($$self, apiKey, $$value => $$invalidate(6, $apiKey = $$value));
     	let visible = false;
-
-    	function handleKeydown(event) {
-    		let keyCode = event.keyCode;
-    		if (keyCode == 192) $$invalidate(0, visible = !visible); // for ~ key
-    	}
-
     	const click_handler = () => $$invalidate(0, visible = !visible);
-    	const click_handler_1 = () => $$invalidate(0, visible = !visible);
 
     	function input_input_handler() {
     		$apiKey = this.value;
@@ -4553,13 +4546,12 @@
     	return [
     		visible,
     		$onOpArcade,
+    		$isTournament,
     		$loginState,
     		$url,
     		$opSdk,
     		$apiKey,
-    		handleKeydown,
     		click_handler,
-    		click_handler_1,
     		input_input_handler
     	];
     }
@@ -4567,7 +4559,7 @@
     class SdkDrawer extends SvelteComponent {
     	constructor(options) {
     		super();
-    		if (!document.getElementById("svelte-x2vv6l-style")) add_css$1();
+    		if (!document.getElementById("svelte-hcophq-style")) add_css$1();
     		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
     	}
     }
@@ -5327,7 +5319,7 @@
     		p(ctx, dirty) {
     			const content_changes = {};
 
-    			if (!updating_showPopup && dirty & /*showPopup*/ 1) {
+    			if (!updating_showPopup && dirty[0] & /*showPopup*/ 1) {
     				updating_showPopup = true;
     				content_changes.showPopup = /*showPopup*/ ctx[0];
     				add_flush_callback(() => updating_showPopup = false);
@@ -5383,10 +5375,10 @@
     			mount_component(modal, target, anchor);
     			current = true;
     		},
-    		p(ctx, [dirty]) {
+    		p(ctx, dirty) {
     			const modal_changes = {};
 
-    			if (dirty & /*$$scope, showPopup*/ 536870913) {
+    			if (dirty[0] & /*showPopup*/ 1 | dirty[1] & /*$$scope*/ 1) {
     				modal_changes.$$scope = { dirty, ctx };
     			}
 
@@ -5418,22 +5410,24 @@
     function instance$4($$self, $$props, $$invalidate) {
     	let $url;
     	let $onOpArcade;
-    	let $loginState;
     	let $passedSessionToken;
+    	let $loginState;
     	let $tournamentId;
+    	let $isTournament;
     	let $tourneyStore;
     	let $authStore;
     	component_subscribe($$self, url, $$value => $$invalidate(20, $url = $$value));
     	component_subscribe($$self, onOpArcade, $$value => $$invalidate(21, $onOpArcade = $$value));
-    	component_subscribe($$self, loginState, $$value => $$invalidate(22, $loginState = $$value));
-    	component_subscribe($$self, passedSessionToken, $$value => $$invalidate(23, $passedSessionToken = $$value));
+    	component_subscribe($$self, passedSessionToken, $$value => $$invalidate(22, $passedSessionToken = $$value));
+    	component_subscribe($$self, loginState, $$value => $$invalidate(23, $loginState = $$value));
     	component_subscribe($$self, tournamentId, $$value => $$invalidate(24, $tournamentId = $$value));
-    	component_subscribe($$self, tourneyStore, $$value => $$invalidate(25, $tourneyStore = $$value));
-    	component_subscribe($$self, authStore, $$value => $$invalidate(26, $authStore = $$value));
+    	component_subscribe($$self, isTournament, $$value => $$invalidate(25, $isTournament = $$value));
+    	component_subscribe($$self, tourneyStore, $$value => $$invalidate(26, $tourneyStore = $$value));
+    	component_subscribe($$self, authStore, $$value => $$invalidate(27, $authStore = $$value));
     	const OP_ARCADE_URL_DEV = "http://localhost:3000/";
-    	const OP_ARCADE_URL_PROD = "http://op-arcade-dev.herokuapp.com/";
+    	const OP_ARCADE_URL_PROD = "http://test.outplay.games/";
     	const OP_ARCADE_URL_DEV_ORIGIN = "http://localhost:3000";
-    	const OP_ARCADE_URL_PROD_ORIGIN = "http://op-arcade-dev.herokuapp.com";
+    	const OP_ARCADE_URL_PROD_ORIGIN = "http://test.outplay.games";
 
     	const DEFAULT_CONFIG = {
     		tourney_server: {
@@ -5478,10 +5472,20 @@
 
     		useServers(serverConfig).then(result => {
     			if ($onOpArcade) {
-    				set_store_value(loginState, $loginState = saveSessionToken($passedSessionToken), $loginState);
-    				set_store_value(tournamentId, $tournamentId = saveTournamentId($passedSessionToken), $tournamentId);
+    				updateOpArcadeStores();
     			}
     		});
+    	}
+
+    	function updateOpArcadeStores() {
+    		// possible timing issue with useServers. need to find a way to sync
+    		if ($passedSessionToken === null) {
+    			console.log("no session token passed");
+    		} else {
+    			set_store_value(loginState, $loginState = saveSessionToken($passedSessionToken), $loginState);
+    			set_store_value(tournamentId, $tournamentId = saveTournamentId($passedSessionToken), $tournamentId);
+    			if ($tournamentId !== null) set_store_value(isTournament, $isTournament = true, $isTournament);
+    		}
     	}
 
     	// save session token
@@ -5492,11 +5496,7 @@
     				try {
     					let session = JSON.parse(e.data);
     					passedSessionToken.set(session);
-
-    					// possible timing issue with useServers. need to find a way to sync
-    					set_store_value(loginState, $loginState = saveSessionToken($passedSessionToken), $loginState);
-
-    					set_store_value(tournamentId, $tournamentId = saveTournamentId($passedSessionToken), $tournamentId);
+    					updateOpArcadeStores();
     				} catch(e) {
     					console.log(e);
     				}
@@ -5586,26 +5586,34 @@
     	constructor(options) {
     		super();
 
-    		init(this, options, instance$4, create_fragment$3, safe_not_equal, {
-    			OP_ARCADE_URL_DEV: 1,
-    			OP_ARCADE_URL_PROD: 2,
-    			OP_ARCADE_URL_DEV_ORIGIN: 3,
-    			OP_ARCADE_URL_PROD_ORIGIN: 4,
-    			DEFAULT_CONFIG: 5,
-    			config: 6,
-    			configStore: 7,
-    			CONSTANTS: 8,
-    			useServers: 9,
-    			props: 10,
-    			initialize: 11,
-    			getTourney: 12,
-    			loginPrompt: 13,
-    			attemptTourney: 14,
-    			postScore: 15,
-    			joinTourney: 16,
-    			getSessionToken: 17,
-    			getTournamentId: 18
-    		});
+    		init(
+    			this,
+    			options,
+    			instance$4,
+    			create_fragment$3,
+    			safe_not_equal,
+    			{
+    				OP_ARCADE_URL_DEV: 1,
+    				OP_ARCADE_URL_PROD: 2,
+    				OP_ARCADE_URL_DEV_ORIGIN: 3,
+    				OP_ARCADE_URL_PROD_ORIGIN: 4,
+    				DEFAULT_CONFIG: 5,
+    				config: 6,
+    				configStore: 7,
+    				CONSTANTS: 8,
+    				useServers: 9,
+    				props: 10,
+    				initialize: 11,
+    				getTourney: 12,
+    				loginPrompt: 13,
+    				attemptTourney: 14,
+    				postScore: 15,
+    				joinTourney: 16,
+    				getSessionToken: 17,
+    				getTournamentId: 18
+    			},
+    			[-1, -1]
+    		);
     	}
 
     	get OP_ARCADE_URL_DEV() {
