@@ -72,6 +72,7 @@ body {
   border: none;
   cursor: pointer;
   font-family: 'Press Start 2P', sans-serif;
+  font-size: 0.825rem;
   padding: 1rem 1.25rem;
   width: 100%;
 
@@ -292,11 +293,15 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    padding-top: 1rem;
+  }
+  
   .scores-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     .score-container {
       margin-bottom: 0;
