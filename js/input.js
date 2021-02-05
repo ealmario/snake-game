@@ -11,19 +11,19 @@ window.addEventListener('click', handleMobileDirection);
 
 function handleDirection(e) {
   switch (e.keyCode) {
-    case 38:
+    case 87:
       if (lastInputDirection.y !== 0) break;
       inputDirection = { x: 0, y: -1 };
       break;
-    case 40:
+    case 83:
       if (lastInputDirection.y !== 0) break;
       inputDirection = { x: 0, y: 1 };
       break;
-    case 37:
+    case 65:
       if (lastInputDirection.x !== 0) break;
       inputDirection = { x: -1, y: 0 };
       break;
-    case 39:
+    case 68:
       if (lastInputDirection.x !== 0) break;
       inputDirection = { x: 1, y: 0 };
       break;
