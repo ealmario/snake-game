@@ -14,6 +14,22 @@
   <link rel="manifest" href="./site.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>Classic Snake Game</title>
+  <!--  OP Arcade Configuration -->
+	<meta name="op-config"
+  content='{
+    "auth_server": {
+      "type": "nakama",
+      "url": "nakama1.outplay.games",
+      "port": 7350,
+      "key": "defaultkey"
+    },
+    "tourney_server": {
+      "type": "nakama",
+      "url": "nakama1.outplay.games",
+      "port": 7350,
+      "key": "defaultkey"
+    }
+  }'>
   <script src="./js/game.js" defer type="module"></script>
   <script defer src="./js/op.js"></script> <!-- load sdk as op -->
   <script src="https://kit.fontawesome.com/f62d360eff.js" crossorigin="anonymous"></script>
