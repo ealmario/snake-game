@@ -7,7 +7,6 @@ import {
 import { update as updateFood, draw as drawFood } from './food.js';
 import { outsideGrid } from './grid.js';
 import { RATE_INCREASE, ADD_SCORE } from './constants.js';
-import './op.js';
 
 // DOM
 const gameBoard = document.getElementById('gameBoard');
@@ -136,29 +135,9 @@ export function addScore() {
   compareScore(score, highScore);
 }
 
-async function submitScore() {
-  const tournament_id = op.getTournamentId();
-
-  const options = {
-    tournament_id,
-    score
-  }
-
-  if (tournament_id !== null) {
-    const post = await op.postScore(options);
-
-    if (post.success) {
-      alert("Successfully submitted score " + score);
-      window.location = "/snake-game/";
-    }
-  } 
-
-  window.location = "/snake-game/";
-}
-
 playBtn.addEventListener('click', startGame);
 instBtn.addEventListener('click', instructions);
 backBtn.addEventListener('click', back);
 yesBtn.addEventListener('click', restartGame);
-noBtn.addEventListener('click', submitScore);
+noBtn.addEventListener('click', restartGame);
 switchBtn.addEventListener('click', toggleSwitch);
