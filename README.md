@@ -4,7 +4,9 @@ The classic snake game built with vanilla Javascript. Based on [THIS](https://yo
 
 ### 🎮 Controls
 
-This game has both keyboard controls and on-screen mobile controls.
+This game has both keyboard controls and ~~on-screen mobile controls~~.
+
+Update: Swipe gestures are now supported on mobile.
 
 ##### Keyboard
 
