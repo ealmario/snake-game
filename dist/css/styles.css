@@ -127,6 +127,9 @@ body {
   font-size: 0.8125rem;
   margin-bottom: 1rem;
 }
+.inst-modal .reminder.info {
+  margin-top: 0;
+}
 .inst-modal .reminder {
   font-size: 0.5rem;
   line-height: 1rem;
