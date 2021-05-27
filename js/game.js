@@ -140,4 +140,4 @@ instBtn.addEventListener('click', instructions);
 backBtn.addEventListener('click', back);
 yesBtn.addEventListener('click', restartGame);
 noBtn.addEventListener('click', restartGame);
-// switchBtn.addEventListener('click', toggleSwitch);
+switchBtn.addEventListener('click', toggleSwitch);
