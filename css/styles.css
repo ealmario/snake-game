@@ -175,7 +175,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   font-size: 1rem;
-  margin: 2rem 0;
+  padding: 2rem 0;
   width: 90vmin;
 }
 .scores-container .score-container {
@@ -289,7 +289,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0;
+    padding: 0;
     margin-bottom: 0.5rem;
   }
   .scores-container .score-container {
