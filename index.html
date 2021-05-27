@@ -18,77 +18,75 @@
   <script src="https://kit.fontawesome.com/f62d360eff.js" crossorigin="anonymous"></script>
 </head>
 <body id="mainContainer">
-  <!-- <div class="wrapper"> -->
-    <div class="overlay display-none" id="gameOverModal">
-      <div class="game-over-modal">
-        <h2>Game Over!</h2>
-        <p class="reminder">Do you want to try again?</p>
-        <button id="yes" class="button yes">Yes!</button>
-        <button id="no" class="button outline">Nah, I'm good.</button>
-      </div>
+  <div class="overlay display-none" id="gameOverModal">
+    <div class="game-over-modal">
+      <h2>Game Over!</h2>
+      <p class="reminder">Do you want to try again?</p>
+      <button id="yes" class="button yes">Yes!</button>
+      <button id="no" class="button outline">Nah, I'm good.</button>
     </div>
+  </div>
     
-    <div class="overlay" id="overlayModal">
-      <div class="overlay-modal" id="titleModal">
-        <h1>Classic Snake</h1>
-        <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
-        <button class="play button" id="play">Play</button>
-        <button class="instructions button" id="instructions">Instructions</button>
-      </div>
+  <div class="overlay" id="overlayModal">
+    <div class="overlay-modal" id="titleModal">
+      <h1>Classic Snake</h1>
+      <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
+      <button class="play button" id="play">Play</button>
+      <button class="instructions button" id="instructions">Instructions</button>
+    </div>
 
-      <div class="inst-modal display-none" id="instModal">
-        <h2>Instructions</h2>
-        <!-- <p class="reminder info">Swipe gestures supported for mobile</p> -->
-        <p class="controls">Controls:</p>
-        <ul>
-          <li>Up - W</li>
-          <li>Left - A</li>
-          <li>Right - D</li>
-          <li>Down - S</li>
-        </ul>
-        <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
-        <div class="btn-container">
-          <button id="back" class="button">Back</button>
+    <div class="inst-modal display-none" id="instModal">
+      <h2>Instructions</h2>
+      <!-- <p class="reminder info">Swipe gestures supported for mobile</p> -->
+      <p class="controls">Controls:</p>
+      <ul>
+        <li>Up - W</li>
+        <li>Left - A</li>
+        <li>Right - D</li>
+        <li>Down - S</li>
+      </ul>
+      <p class="reminder">Don't forget to press the arrow buttons upon clicking the play button!</p>
+      <div class="btn-container">
+        <button id="back" class="button">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="scores-container">
+      <p class="score-container">Score:<span id="score"></span></p>
+      <p class="high-score-container">Hi-Score:<span id="highScore"></span>
+    </div>
+    <div id="gameBoard" class="game-board"></div>
+
+    <div class="mobile-container" id="mobileContainer">
+      <button class="button outline switch" id="switch">
+        Switch to <span id="position">left</span>
+      </button>
+      <div class="mobile-controls">
+        <div class="row">
+          <button class="arrow-up">
+            <i class="fas fa-arrow-circle-up" id="arrowUp"></i>
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="arrow-left">
+            <i class="fas fa-arrow-circle-left" id="arrowLeft"></i>
+          </button>
+          <button class="arrow-right">
+            <i class="fas fa-arrow-circle-right" id="arrowRight"></i>
+          </button>
+        </div>
+
+        <div class="row">
+          <button class="arrow-down">
+            <i class="fas fa-arrow-circle-down" id="arrowDown"></i>
+          </button>
         </div>
       </div>
     </div>
 
-    <main class="container">
-      <div class="scores-container">
-        <p class="score-container">Score:<span id="score"></span></p>
-        <p class="high-score-container">Hi-Score:<span id="highScore"></span>
-      </div>
-      <div id="gameBoard" class="game-board"></div>
-
-      <div class="mobile-container" id="mobileContainer">
-        <button class="button outline switch" id="switch">
-          Switch to <span id="position">left</span>
-        </button>
-        <div class="mobile-controls">
-          <div class="row">
-            <button class="arrow-up">
-              <i class="fas fa-arrow-circle-up" id="arrowUp"></i>
-            </button>
-          </div>
-
-          <div class="row">
-            <button class="arrow-left">
-              <i class="fas fa-arrow-circle-left" id="arrowLeft"></i>
-            </button>
-            <button class="arrow-right">
-              <i class="fas fa-arrow-circle-right" id="arrowRight"></i>
-            </button>
-          </div>
-
-          <div class="row">
-            <button class="arrow-down">
-              <i class="fas fa-arrow-circle-down" id="arrowDown"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </main>
-  <!-- </div> -->
+  </main>
 </body>
 </html>
