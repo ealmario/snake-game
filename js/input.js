@@ -2,19 +2,19 @@ const arrowUp = document.getElementById('arrowUp');
 const arrowLeft = document.getElementById('arrowLeft');
 const arrowRight = document.getElementById('arrowRight');
 const arrowDown = document.getElementById('arrowDown');
-const mainContainer = document.getElementById('mainContainer');
+// const mainContainer = document.getElementById('mainContainer');
 
 let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0};
 
 // For touch support
-let gestureDown = { x: 0, y: 0 };
-let gestureUp = { x: 0, y: 0 };
+// let gestureDown = { x: 0, y: 0 };
+// let gestureUp = { x: 0, y: 0 };
 
 window.addEventListener('keydown', handleDirection);
 window.addEventListener('click', handleMobileDirection);
-mainContainer.addEventListener('touchstart', handleTouchStart, false);
-mainContainer.addEventListener('touchmove', handleTouchMove, false);
+// mainContainer.addEventListener('touchstart', handleTouchStart, false);
+// mainContainer.addEventListener('touchmove', handleTouchMove, false);
 
 function handleDirection(e) {
   switch (e.keyCode) {

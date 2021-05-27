@@ -10,13 +10,11 @@ $overlay-bg: rgba(31,31,31, 0.4);
 }
 
 html {
-  width: 100vw;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
+  width: 100vw;
 }
 
-.body {
+body {
   background:$body-color;
   color: $blacks;
   font-family: 'Press Start 2p', sans-serif;
@@ -24,23 +22,9 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
 }
-
-.body,
-.wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.wrapper {
-  z-index: 2;
-}
-
 
 .footer {
   font-family: 'Montserrat', sans-serif;
@@ -69,7 +53,7 @@ html {
   align-items: center;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 2;
 
   h1, h2 {
     font-size: 1.25rem;
@@ -269,7 +253,8 @@ html {
     font-size: 2.75rem;
   }
 
-  &:focus {
+  &:focus,
+  &:active {
     outline: none;
   }
 }
@@ -321,6 +306,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0;
     margin-bottom: 0.5rem;
 
     .score-container {

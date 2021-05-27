@@ -18,12 +18,12 @@ const loginBtn = document.getElementById('login');
 const backBtn = document.getElementById('back');
 const yesBtn = document.getElementById('yes');
 const noBtn = document.getElementById('no');
-// const switchBtn = document.getElementById('switch');
+const switchBtn = document.getElementById('switch');
 const instModal = document.getElementById('instModal');
 const titleModal = document.getElementById('titleModal');
 const overlayModal = document.getElementById('overlayModal');
 const gameOverModal = document.getElementById('gameOverModal');
-// const mobileContainer = document.getElementById('mobileContainer');
+const mobileContainer = document.getElementById('mobileContainer');
 const positionText = document.getElementById('position');
 
 // GAME LOOP
