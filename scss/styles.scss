@@ -57,7 +57,7 @@ html {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0;
   width: 100%;
@@ -325,6 +325,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0;
     margin-bottom: 0.5rem;
 
     .score-container {
