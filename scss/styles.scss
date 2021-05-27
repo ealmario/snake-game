@@ -9,14 +9,12 @@ $overlay-bg: rgba(31,31,31, 0.4);
   box-sizing: border-box;
 }
 
-html,
-body {
-  width: 100vw;
+html {
   height: 100vh;
-  overflow: hidden;
+  width: 100vw;
 }
 
-.body {
+body {
   background:$body-color;
   color: $blacks;
   font-family: 'Press Start 2p', sans-serif;
@@ -24,6 +22,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .footer {
@@ -253,7 +253,8 @@ body {
     font-size: 2.75rem;
   }
 
-  &:focus {
+  &:focus,
+  &:active {
     outline: none;
   }
 }
