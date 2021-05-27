@@ -1,5 +1,5 @@
 // SNAKE
-export const RATE_INCREASE = 0.1; // how much to increase the speed per food eaten
+export const RATE_INCREASE = 0.2; // how much to increase the speed per food eaten
 export const ADD_SCORE = 10 // would be set to 10 for now
 
 // FOOD
